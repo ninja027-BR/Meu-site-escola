@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Marinha Dinâmica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-container"></div>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-water"></i>
+            <h1 id="site-main-title">Wiki da Biodiversidade Marinha</h1>
+        </div>
+        <nav id="main-nav">
+            <!-- Botões serão gerados aqui -->
+        </nav>
+    </header>
+
+    <main id="content-area">
+        <div class="content-wrapper" id="content-wrapper">
+            <!-- Seções de conteúdo serão geradas aqui -->
+            <section class="content-section" id="gerenciar-content" style="display: none;">
+                <h2>Painel de Gerenciamento</h2>
+                <div class="management-group">
+                    <h3>Configurações Gerais</h3>
+                    <input type="text" id="site-title-input" placeholder="Título do Site">
+                    <button id="save-site-title-btn">Salvar Título</button>
+                    <hr>
+                    <input type="url" id="background-url-input" placeholder="URL da Imagem de Fundo">
+                    <button id="save-background-btn">Salvar Fundo</button>
+                    <button id="reset-background-btn">Fundo Padrão</button>
+                </div>
+                
+                <div class="management-group">
+                    <h3>Gerenciar Tópicos</h3>
+                    <input type="text" id="new-topic-name" placeholder="Nome do Novo Tópico">
+                    <button id="create-topic-button">Criar Tópico</button>
+                    <div id="existing-topics-list"></div>
+                </div>
+                
+                <div class="management-group">
+                    <h3>Editar Conteúdo do Tópico</h3>
+                    <div class="editor-panel">
+                        <select id="topic-selector"></select>
+                        <textarea id="content-editor" rows="10"></textarea>
+                        <button id="save-text-button">Salvar Texto</button>
+                        <hr>
+                        <label>Adicionar nova imagem:</label>
+                        <input type="file" id="image-uploader" accept="image/*">
+                        <input type="text" id="image-caption-input" placeholder="Legenda da imagem (opcional)">
+                        <select id="image-align-select">
+                            <option value="center">Alinhar ao Centro</option>
+                            <option value="left">Alinhar à Esquerda</option>
+                            <option value="right">Alinhar à Direita</option>
+                        </select>
+                        <button id="add-image-button">Adicionar Imagem</button>
+                        <p id="status-message"></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <dialog id="rename-modal">
+        <h3>Renomear Tópico</h3>
+        <input type="text" id="rename-topic-input">
+        <div class="modal-actions">
+            <button id="cancel-rename-button">Cancelar</button>
+            <button id="confirm-rename-button">Salvar</button>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
